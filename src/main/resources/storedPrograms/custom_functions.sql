@@ -1,0 +1,12 @@
+
+DELIMITER //
+
+DROP FUNCTION IF EXISTS GetMaxAppCount;
+CREATE FUNCTION GetMaxAppCount()
+RETURNS INT
+DETERMINISTIC
+BEGIN
+RETURN (SELECT MAX(created_app_amount) FROM `lovushkina`.`creater`);
+END //
+
+DELIMITER ;
